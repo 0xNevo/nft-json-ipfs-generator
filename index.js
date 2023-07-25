@@ -12,7 +12,7 @@ const PORT = 2083;
 // });
 
 async function generateTxtfiles() {
-    let cnt = 50;
+    let cnt = 40;
 
     async function writeTextToFile(filePath, text) {
         fs.writeFile(filePath, JSON.stringify(text), (err) => {
@@ -35,13 +35,13 @@ async function generateTxtfiles() {
         let pathVal = await padWithLeadingZeros((i + 1), 5);
 
         tmpObj = {};
-        tmpObj.filePath = `${pathVal}.json`;
+        tmpObj.filePath = `./jsonData/${(i + 1)}.json`;
         tmpObj.text = {
             "id": `${i + 1}`,
-            "name": "InkWorkCollection",
+            "name": "JellyDawgs",
             "descrition": "This is a NFT for inkwork collection with custom NFT",
             "image": "https://gateway.pinata.cloud/ipfs/",
-            "image": `https://sapphire-tremendous-bonobo-765.mypinata.cloud/ipfs/QmahW54PrNs2ECan8WSdwcmhmpEZhMDJkDRJcKPP8WXWpX${pathVal}.png`
+            "image": `https://sapphire-tremendous-bonobo-765.mypinata.cloud/ipfs/QmTVfjTpZyFJtTtMPxXo3ohTXypVdMH8cztVsxFagjTyn9/${(i + 1)}.jpg`
         }
 
         filesAndText.push(tmpObj);
